@@ -1,10 +1,11 @@
 import unittest
+from typing import Dict
 from random import randrange
 
 from task import task
 
 
-def create_rand_data(amount: int) -> dict[str, int]:
+def create_rand_data(amount: int) -> Dict[str, int]:
     data = {}
     for i in range(0, amount):
         ones_length = randrange(1, 25)
@@ -24,7 +25,7 @@ class TestTask1(unittest.TestCase):
 
     def test_task(self):
         for item, res in self.TEST_DATA.items():
-            self.assertTrue(task(item), res)
+            self.assertEqual(task(item), res)
 
 
 if __name__ == '__main__':
